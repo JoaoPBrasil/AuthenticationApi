@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using AuthApi.Domain.Entities;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 
 namespace AuthApi.Application.Security;
 
@@ -10,9 +11,9 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 {
     private readonly JwtSettings _settings;
 
-    public JwtTokenGenerator(JwtSettings settings)
+    public JwtTokenGenerator(IOptions<JwtSettings> options)
     {
-        _settings = settings;
+        _settings = options.Value;
     }
 
     public string GenerateToken(User user)

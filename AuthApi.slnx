@@ -3,4 +3,5 @@
   <Project Path="AuthApi.Application/AuthApi.Application.csproj" />
   <Project Path="AuthApi.Domain/AuthApi.Domain.csproj" />
   <Project Path="AuthApi.Infrastructure/AuthApi.Infrastructure.csproj" />
+  <Project Path="AuthApi.Tests/AuthApi.Tests.csproj" />
 </Solution>

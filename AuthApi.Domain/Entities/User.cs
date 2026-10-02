@@ -16,8 +16,6 @@ public class User
 
     public DateTime CreatedAt { get; private set; }
 
-    public DateTime? UpdatedAt { get; private set; }
-
     public DateTime? LastLoginAt { get; private set; }
     public UserRole Role { get; private set; }
 
@@ -34,5 +32,15 @@ public class User
         Role = role;
         IsActive = true;
         CreatedAt = DateTime.UtcNow;
+    }
+
+    public void RecordLogin()
+    {
+        LastLoginAt = DateTime.UtcNow;
+    }
+
+    public void Deactivate()
+    {
+        IsActive = false;
     }
 }
